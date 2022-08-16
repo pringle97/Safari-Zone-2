@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safari Zone</title>
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<div>
+
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo center start-button"><img src="assets/images/snorlax.svg" width="120px"></a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pokedex.html">Pokedéx</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+      <ul class="left hide-on-med-and-down">
+        <li><a class="waves-effect waves-light btn modal-trigger blue darken-4 pulse" href="#modal2"><i class="tiny material-icons">music_note</i></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="pokedex.html">Pokedéx</a></li>
+    <li><a href="about.html">About Us</a></li>
+  </ul>
+
+  <div class="container">
+
+<div class="row">
+
+  <div class="col s12 title center">
+    <h4>Welcome to the Safari Zone!</h4>
+  </div>
+</div>
+  
+    </div>
+
+
+
+
+ 
+
+
+
+<div class="container">
+  <div class="row">
+<!-- <div id="pokeList" class="col s12 m12 l3 offset-l1 pokemonList"></div> -->
+    
+<div id="pokemonImg" class="col s12 m12 l5" >
+  <img id="cardBackground" src="assets/images/pokemonBackground.png">
+  
+
+    </div>
+    <!-- </div> -->
+    <!-- <div class="column2"> -->
+      <div id="cardContent" class="col s12 m12 l5 push-l2 card-content center">
+        <h5>How to Play</h5>
+        <h6>Click on the explore button to find a pokemon.</h6>
+        <h6>When you find a pokemon you want, throw a ball.</h6>
+        <br>
+
+
+
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- Modal Structure for throw a ball -->
+ 
+  
+  
+      <div id="modal3" class="modal">
+        <div id="caughtStatus" class="modal-content">
+  
+          <p>Please explore for a pokemon</p>
+        </div>
+      </div>
+  
+ 
+
+
+
+
+
+<div id="btnContainer" class="container">
+<div class="row">
+  
+  <div class="col s12 m12 l3 push-l1 btnBtn ">
+
+    <div class="center">
+      <br>
+      <a id="start-button" class="btn-small center waves-effect waves-light blue darken-4"><i
+        class="material-icons right">directions_run</i>Explore</a>
+        <br>
+      </div>
+      
+    </div>
+
+    <div class="col s12 m12 l3 push-l5 btnBtn">
+
+      <div class="center ">
+        <br>
+        <a id="ball" class="btn-small waves-effect waves-light modal-trigger blue darken-4"  href="#modal3">throw a ball</a> 
+        <br>
+        <!-- <a class="btn waves-effect waves-light blue darken-4">throw a berry</a>
+          <a class="btn waves-effect waves-light blue darken-4">go near</a>
+          <a class="btn waves-effect waves-light blue darken-4">run away</a> -->
+        </div>
+      </div>
+        
+    </div>
+      
+    </div>
+
+
+
+
+
+    <!-- Modal Structure -->
+    <div id="modal2" class="modal bottom-sheet">
+      <div class="modal-content">
+        
+        <h3>Pokemon Music</h3>
+        
+        <p>Title Song</p>
+        <audio id="audio" controls> 
+          <source src="assets/audio/03_Title_Screen.mp3" type="audio/mp3">
+        </audio>
+          <p>Safari Zone</p>
+          <audio id="audio1" controls>
+            <source src="assets/audio/086 Safari Zone.mp3" type="audio/mp3">
+          </audio>
+          <p>Trainer Battle</p>
+          <audio id="audio2" controls> 
+            <source src="assets/audio/10 Battle! (Trainer Battle).mp3" type="audio/mp3">
+          </audio>
+            
+        
+  </div>
+  </div>
+
+<footer class="page-footer">
+  <div class="container">
+    <p class="white-text">© 2021 Copyright by</p><br>
+    <p>Alan, Kevin, Malia, Nathan and Peter</p>
+    <!-- <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p> -->
+  </div>
+
+</footer>
+
+  <script>
+    function audioPlayer(){
+      var currentSong = 0
+      $("#audioPlayer")[0].src = $("playlist li a")[0]
+      $("#audioPlayer")[0].play()
+      $("playlist li a").click(function(e){
+        e.preventDefault()
+        $("audioPlayer")[0].src = this
+        $("audioPlayer")[0].play()
+        $("playlist li").removeClass("current-song")
+        currentSong = $(this).parent().index()
+        $(this).parent().addClass("current-song")
+      })
+      
+      $("#audioPlayer")[0].addEventListener("ended", function(){
+        currentSong++
+        if(currentSong == $("playlist li a").length)
+        currentSong = 0
+        $("#playlist li").removeClass("current-song")
+        $("playlist li:eq("+currentSong+")").addClass("current-song")
+        $("audioPlayer")[0].src = $("#playlist li a") [currentSong].href
+        $("#audioPlayer")[0].play()
+      })
+      
+    audioPlayer()
+  }
+  </script>
+  
+  <script src=" https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- <script src="assets/js/jokeScript.js"></script> -->
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>

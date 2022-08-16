@@ -1,0 +1,134 @@
+:root {
+  --main-bg-color: #fe0065;
+  --secondary-bg-color: #f2f2f2;
+  --main-screen-bg-color: #98cb98;
+  --secondary-screen-bg-color: #9e9d9d;
+  --main-buttons-color: #585858;
+  --square-buttons-color: #7ca9f7;
+}
+
+body {
+  background-image: url("../images/pokemonBackground.png");
+  font-family: 'Press Start 2P', cursive;
+}
+
+
+.nav-wrapper {
+  background: linear-gradient(90deg, #ff1654 35%, #247ba0 60%);
+  padding: 0 2% 2% 2%;
+}
+
+
+.modal {
+  width: 70%;
+}
+
+
+.page-footer {
+  background: linear-gradient(90deg, #ff1654 35%, #247ba0 60%);
+  text-align: center;
+  padding-bottom: 10px;
+
+}
+
+.title {
+  margin: 10px 0 10px 0;
+  border-radius: 2px;
+  background: white;
+  border: 3px solid white;
+  box-shadow: 0 3px 0 3px black, inset 0 3px 0 3px black, 0 0 0 3px black, inset 0 0 0 3px black;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-family: 'Press Start 2P', cursive;
+
+
+}
+
+#pokemonImg {
+  padding: 3px;
+  margin-bottom: 0px !important;
+  background-image: url("../images/pokemonBackground.png");
+  display: flex;
+  border-radius: 2px;
+  background: white;
+  border: 3px solid white;
+  box-shadow: 0 3px 0 3px black, inset 0 3px 0 3px black, 0 0 0 3px black, inset 0 0 0 3px black;
+  margin-top: 25px;
+  margin-bottom: 25px;
+
+
+}
+
+#cardBackground {
+  width: 100%;
+  height: 100%;
+
+}
+
+#cardContent {
+  border-radius: 2px;
+  background: white;
+  border: 3px solid white;
+  box-shadow: 0 3px 0 3px black,
+    inset 0 3px 0 3px black,
+    0 0 0 3px black,
+    inset 0 0 0 3px black;
+  margin-top: 25px;
+  margin-bottom: 25px;
+
+}
+
+.btnBtn {
+  padding: 25px !important;
+  border-radius: 2px;
+  background: white;
+  border: 3px solid white;
+  box-shadow: 0 3px 0 3px black,
+    inset 0 3px 0 3px black,
+    0 0 0 3px black,
+    inset 0 0 0 3px black;
+  margin-top: 25px;
+  margin-bottom: 25px;
+
+}
+
+
+
+.actionbtns-container {
+  padding-bottom: 30px;
+}
+
+
+
+
+h4 {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+  background: linear-gradient(90deg, #ff1654 35%, #247ba0 60%);
+  color: white;
+}
+
+#modal3 {
+  text-align: center;
+  border-radius: 2px;
+  background: white;
+  border: 3px solid white;
+  box-shadow: 0 3px 0 3px black,
+    inset 0 3px 0 3px black,
+    0 0 0 3px black,
+    inset 0 0 0 3px black;
+  margin-top: 25px;
+  margin-bottom: 25px;
+
+
+}
+
+@media only screen and (max-width: 400px) {
+  .imageArt{
+    width: 75%;
+  }
+
+}

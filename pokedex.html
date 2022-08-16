@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safari Zone | Pokedex</title>
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="assets/css/pokedexPage.css">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo center"><img src="assets/images/snorlax.svg" width="120px"></a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pokedex.html">Pokedéx</a></li>
+      <li><a href="about.html">About Us</a></li>
+      </ul>
+      <ul class="left hide-on-med-and-down">
+        <li><a class="waves-effect waves-light btn modal-trigger blue darken-4 pulse" href="#modal2"><i
+              class="tiny material-icons">music_note</i></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="pokedex.html">Pokedéx</a></li>
+  <li><a href="about.html">About Us</a></li>
+  </ul>
+
+
+  <div class="container2">
+
+    <div class="row">
+      
+      <div id="pokeList" class="col s12 m12 l3 offset-l1 pokemonList">
+      <ul class="collection with-header">
+        <li class="collection-header">
+          <h4>Pokémon</h4>
+        </li>
+        
+        <!-- <li class="name col s12 collection-item waves-effect waves-teal btn-flat ">Pokemon1</li>
+        <li class="name col s12 collection-item waves-effect waves-teal btn-flat ">Pokemon2</li>
+        <li class="name col s12 collection-item waves-effect waves-teal btn-flat ">Pokemon3</li>
+        <li class="name col s12 collection-item waves-effect waves-teal btn-flat ">Pokemon4</li>
+        <li class="name col s12 collection-item waves-effect waves-teal btn-flat ">Pokemon5</li> -->
+
+      </ul>
+      </div>
+      <div class="col s12 m12 l6 offset-l1 pokemonInfo">
+        
+        <div id="pokedex">
+          <!-- Left Panel -->
+          <div id="left-panel">
+            <!-- Top lights -->
+            <div class="left-top-container">
+              <svg height="100" width="225" class="left-svg">
+                <!-- <polyline points="0,100 105,100 135,57 336,57" style="fill: none; stroke: black; stroke-width: 3" /> -->
+              </svg>
+              <div class="lights-container">
+                <div class="big-light-boarder">
+                  <div class="big-light blue">
+                    <div class="big-dot light-blue"></div>
+                  </div>
+                </div>
+                <div class="small-lights-container">
+                  <div class="small-light red">
+                    <div class="dot light-red"></div>
+                  </div>
+                  <div class="small-light yellow">
+                    <div class="dot light-yellow"></div>
+                  </div>
+                  <div class="small-light green">
+                    <div class="dot light-green"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Center Screen -->
+            <div class="screen-container">
+              <div class="screen">
+                <div class="top-screen-lights">
+                  <div class="mini-light red"></div>
+                  <div class="mini-light red"></div>
+                </div>
+                <div id="main-screen"></div>
+                <div class="bottom-screen-lights">
+                  <div class="small-light red">
+                    <div class="dot light-red"></div>
+                  </div>
+                  <div class="burger">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Bottom Buttons -->
+            <div class="buttons-container">
+              <div class="upper-buttons-container">
+                <div class="big-button"></div>
+                <div class="long-buttons-container">
+                  <div class="long-button red"></div>
+                  <div class="long-button light-blue"></div>
+                </div>
+              </div>
+              <div class="nav-buttons-container">
+                <div class="dots-container">
+                  <div>.</div>
+                  <div>.</div>
+                </div>
+                <div class="green-screen">
+                  <span id="name-screen"></span>
+                </div>
+                <div class="right-nav-container">
+                  <div class="nav-button">
+                    <div class="nav-center-circle"></div>
+                    <div class="nav-button-vertical"></div>
+                    <div class="nav-button-horizontal">
+                      <div class="border-top"></div>
+                      <div class="border-bottom"></div>
+                    </div>
+                  </div>
+                  <div class="bottom-right-nav-container">
+                    <div class="small-light red">
+                      <div class="dot light-red"></div>
+                    </div>
+                    <div class="dots-container">
+                      <div class="black-dot">.</div>
+                      <div class="black-dot">.</div>
+                      <div class="black-dot">.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End of Left panel -->
+        
+          <!-- Right-panel -->
+          <div id="right-panel" class="hide-on-small-only">
+            <!-- Blank container -->
+            <div class="empty-container">
+              <svg height="100%" width="100%">
+                <polyline points="0,0 0,40 138,40 158,75 250,75 250,0 0,0"
+                  style="fill: #f2f2f2; stroke: none; stroke-width: 3" />
+                <polyline points="0,40 138,40 158,75 250,75" style="fill: none; stroke: black; stroke-width: 3" />
+              </svg>
+            </div>
+            <!-- Top screen -->
+            <div class="top-screen-container">
+              <div id="about-screen" class="right-panel-screen">
+                
+              </div>
+            </div>
+            <!-- Blue Buttons -->
+            <div class="square-buttons-container">
+              <div class="blue-squares-container">
+                <div class="blue-square"></div>
+                <div class="blue-square"></div>
+                <div class="blue-square"></div>
+                <div class="blue-square"></div>
+                <div class="blue-square"></div>
+                <div class="blue-square"></div>
+                <div class="blue-square"></div>
+                <div class="blue-square"></div>
+                <div class="blue-square"></div>
+                <div class="blue-square"></div>
+              </div>
+            </div>
+            <!-- Center Buttons -->
+            <div class="center-buttons-container">
+              <div class="center-left-container">
+                <div class="small-reds-container">
+                  <div class="small-light red">
+                    <div class="dot light-red"></div>
+                  </div>
+                  <div class="small-light red">
+                    <div class="dot light-red"></div>
+                  </div>
+                </div>
+                <div class="white-squares-container">
+                  <div class="white-square"></div>
+                  <div class="white-square"></div>
+                </div>
+              </div>
+              <div class="center-right-container">
+                <div class="thin-buttons-container">
+                  <div class="thin-button"></div>
+                  <div class="thin-button"></div>
+                </div>
+                <div class="yellow-button yellow">
+                  <div class="big-dot light-yellow"></div>
+                </div>
+              </div>
+            </div>
+            <!-- Bottom screens -->
+            <div class="bottom-screens-container">
+              <div id="type-screen" class="right-panel-screen"></div>
+              <div id="id-screen" class="right-panel-screen" ><button id="random" class="waves-effect waves-light btn-small-flat">Interact</button></div>
+            </div>
+          </div>
+        </div>
+
+        
+      </div>
+      <div id="interact" class="col s12 m12 l6 offset-l1 pokemonInteract">
+
+        <!-- <div id="quoteContainer" class="container col center"> -->
+          <p id="setup"></p>
+          <p id="joke"></p>
+          <p id="quote"></p>
+          <!-- <button id="random" class="btn-large">Interact</button> -->
+          <!-- </div> -->
+        </div>
+    </div>
+
+  </div>
+
+  <!-- modal for music -->
+  <div id="modal2" class="modal bottom-sheet">
+    <div class="modal-content">
+  
+      <h3>Pokemon Music</h3>
+  
+      <p>Pokemon Center</p>
+      <audio id="audio" controls>
+        <source src="assets/audio/pokemonCenter.mp3" type="audio/mp3">
+      </audio>
+  
+      
+      </div>
+      </div>
+
+
+
+
+
+
+<footer class="page-footer">
+  <div class="container">
+    <p class="white-text">© 2021 Copyright by</p><br>
+    <p>Alan, Kevin, Malia, Nathan and Peter</p>
+    <!-- <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p> -->
+  </div>
+
+
+
+
+  <script src=" https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="assets/js/jokeScript.js"></script>
+  
+
+</body>
+
+</html>
