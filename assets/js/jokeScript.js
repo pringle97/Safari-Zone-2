@@ -53,12 +53,20 @@ pokeCollection.forEach(item => {
         console.log(valueCheck)
         let svg = pokemon.sprites.other.dream_world.front_default
 
-        //if more than one type
-        if (pokemon.types.length > 1) {
-          //display more than 1 type
-          document.getElementById(`type-screen`).innerHTML = `Type: ${capitalize(pokemon.types[0].type.name)} ${capitalize(pokemon.types[1].type.name)}`
+        //if more than 1 type
+        if (pokemon.types.length > 0) {
+          //if only one type  
+          if (pokemon.types.length == 1) {
+            //display 1 type
+            document.getElementById(`type-screen`).innerHTML = `Type: ${capitalize(pokemon.types[0].type.name)}`
+          }
+          else {
+            //display 2 types
+            document.getElementById(`type-screen`).innerHTML = `Type: ${capitalize(pokemon.types[0].type.name)} ${capitalize(pokemon.types[1].type.name)}`
+            console.log("there is more than one type")
+          }
         }
-        
+
 
         // adds information onto pokedex from pokemon API
         document.getElementById('main-screen').innerHTML = `
@@ -69,7 +77,6 @@ pokeCollection.forEach(item => {
         document.getElementById(`about-screen`).innerHTML = `Height: ${addDecimal(pokemon.height)}m
         Weight: ${addDecimal(pokemon.weight)}kg
         `
-        document.getElementById(`type-screen`).innerHTML = `Type: ${capitalize(pokemon.types[0].type.name)}`
       })
   })
 })
