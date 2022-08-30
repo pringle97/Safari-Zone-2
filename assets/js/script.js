@@ -1,9 +1,9 @@
 // lowers audio volme when audio is played
-let audio = document.getElementById(`audio`);
+let audio = document.getElementById("audio");
 audio.volume = 0.1;
-let audio1 = document.getElementById(`audio1`);
+let audio1 = document.getElementById("audio1");
 audio1.volume = 0.1;
-let audio2 = document.getElementById(`audio2`);
+let audio2 = document.getElementById("audio2");
 audio2.volume = 0.1;
 
 let randomNumber = (Math.floor(Math.random()))
@@ -114,9 +114,6 @@ document.getElementById("ball").addEventListener("click", event => {
       let caughtPokemonArr = JSON.parse(localStorage.getItem("caughtPokemonArr")) || []
       // grabbing array from localStorage and setting it to caughtPokemonArr variable. If array does not exist, sets it to empty array. Parse with JSON.parse so a real array is returned, not a string array
 
-      console.log(caughtPokemonArr, `caughtPokemonArr, AKA our array that we pulled from localStorage. This should console log as an empty array on the first try since we didn"t push anything into it yet.`)
-      // check caughtPokemonArr value in console
-
 
       // random number generator to capture pokemon
       let wasCaught = catchPokemon()
@@ -130,20 +127,20 @@ document.getElementById("ball").addEventListener("click", event => {
         console.log(pokemonName, "caughtPokemonArr after we pushed stuff")
 
         // when pokemon is caught opens modal for alert 
-        document.getElementById(`caughtStatus`).innerHTML = `You've caught ${capitalize(pokemon.species.name)}!`
+        document.getElementById("caughtStatus").innerHTML = `You've caught ${capitalize(pokemon.species.name)}!`
 
         // type writer function variables
-        let pokemonStatus = document.getElementById(`caughtStatus`).innerHTML
+        let pokemonStatus = document.getElementById("caughtStatus").innerHTML
         let i = 0
         let speed = 50
         let words = `${pokemonStatus}`
         console.log(pokemonStatus)
-        document.getElementById(`caughtStatus`).innerHTML = ""
+        document.getElementById("caughtStatus").innerHTML = ""
 
         // type writer function
         function typeWriter() {
           if (i < words.length) {
-            document.getElementById(`caughtStatus`).innerHTML += words.charAt(i);
+            document.getElementById("caughtStatus").innerHTML += words.charAt(i);
             i++;
             setTimeout(typeWriter, speed);
           }
