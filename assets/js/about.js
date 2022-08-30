@@ -78,7 +78,7 @@ document.getElementById(`malia`).addEventListener(`click`, () => {
   // type writer values
   let i = 0;
   let speed = 10;
-  let words = `Hey there! Thanks for checking out our project! I recently graduated from a full stack web development boot camp and I'm searching for work. Please feel free to reach out! I really enjoy Node.js and working with databases.`
+  let words = `Hey there! Thanks for checking out our project! I recently graduated from a full stack web development boot camp and I'm searching for work. Please feel free to reach out!`
   interactElem.innerHTML = ``
 
   // type writer function that grabs innerHTML to create type writer effect

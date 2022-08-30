@@ -162,10 +162,11 @@ document.getElementById("ball").addEventListener("click", event => {
           }
         }
         typeWriter2()
-        let pokemonRan = didPokemonRun()
-        if (pokemonRan) {
+        //write function for pokemon running away here 
+        // let pokemonRan = didPokemonRun()
+        // if (pokemonRan) {
           
-        }
+        // }
       }
     })
 })
