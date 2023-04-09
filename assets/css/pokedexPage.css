@@ -131,15 +131,9 @@ h4 {
     inset 0 0 0 1.5px black;
 }
 
-
-
 /* text dialogue box ends here */
 
-
-
-
 /* pokedex starts here */
-
 
 .logo {
   justify-self: start;
@@ -380,7 +374,6 @@ input {
   background-color: var(--main-screen-bg-color);
   border: solid black 2px;
   border-radius: 5%;
-  /* background-image: url(https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -745,10 +738,7 @@ input {
 @media only screen and (max-width: 600px) {
   #pokedex {
     width: 100%;
-
   }
-
-
 
   h2 {
     font-size: 24px;
@@ -765,7 +755,6 @@ input {
 
 @media screen and (max-width: 800px) {
   body {
-
     width: 100%;
   }
 }

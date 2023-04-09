@@ -32,6 +32,14 @@ function didPokemonRun() {
   return roll == 1
 }
 
+function typeWriter(i, words, speed) {
+  if (i < words.length) {
+    document.getElementById("caughtStatus").innerHTML += words.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed, i, words, speed);
+  }
+}
+
 // the one mcss function to rule them all (conveniently initializes everything so components work) https://materializecss.com/auto-init.html
 M.AutoInit()
 
@@ -96,6 +104,8 @@ document.getElementById("start-button").addEventListener("click", event => {
 
 });
 
+
+
 // throw ball click event
 document.getElementById("ball").addEventListener("click", event => {
   event.preventDefault()
@@ -131,52 +141,30 @@ document.getElementById("ball").addEventListener("click", event => {
 
         // type writer function variables
         let pokemonStatus = document.getElementById("caughtStatus").innerHTML
-        let i = 0
-        let speed = 50
-        let words = `${pokemonStatus}`
+        // let speed = 50
         console.log(pokemonStatus)
         document.getElementById("caughtStatus").innerHTML = ""
 
-        // type writer function
-        function typeWriter() {
-          if (i < words.length) {
-            document.getElementById("caughtStatus").innerHTML += words.charAt(i);
-            i++;
-            setTimeout(typeWriter, speed);
-          }
-        }
         // initiate type writer function for caught pokemon 
-        typeWriter()
+        typeWriter(0, (pokemonStatus), 50)
       } else {
-        // type writer function variables
-        let i = 0
-        let speed = 50
-        let words = `The Pokemon broke free!`
         document.getElementById(`caughtStatus`).innerHTML = ""
 
-        function typeWriter2() {
-          if (i < words.length) {
-            document.getElementById(`caughtStatus`).innerHTML += words.charAt(i);
-            i++;
-            setTimeout(typeWriter2, speed);
-          }
-        }
-        typeWriter2()
-        //write function for pokemon running away here 
-        // let pokemonRan = didPokemonRun()
-        // if (pokemonRan) {
+        // write function for pokemon running away here 
+        let pokemonRan = didPokemonRun()
+        if (pokemonRan) {
           
-        // }
+          document.getElementById("pokemonImg").innerHTML = `
+        <img src="" alt="">
+        `
+          document.getElementById("cardContent").innerHTML = ``
+          typeWriter(0, "The Pokemon broke free! The Pokemon ran away!", 50)
+        }
+        else {
+          typeWriter(0, "The Pokemon broke free!", 50)
+        }
       }
     })
 })
 
-
-
-
-
-
-
-
-
-
+//delete pokemon from dex

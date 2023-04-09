@@ -140,33 +140,7 @@ h4 {
     inset 0 0 0 1.5px black;
 }
 
-/* .pokemonInteract>i {
-  width: 0;
-  height: 0;
-  border: 5px solid transparent;
-  border-top-color: black;
-  margin-top: 23px;
-  animation: bounce 0.5s ease-in-out 0 infinite alternate;
-  float: right;
-}
-
-@keyframes bounce {
-  from {
-    margin-top: 20px;
-  }
-
-  to {
-    margin-top: 23px;
-  }
-} */
-
-/* text dialogue box ends here */
-
-
-
-
 /* pokedex starts here */
-
 
 .logo {
   justify-self: start;
@@ -407,7 +381,6 @@ input {
   background-color: var(--main-screen-bg-color);
   border: solid black 2px;
   border-radius: 5%;
-  /* background-image: url(https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
