@@ -11,6 +11,9 @@ let addDecimal = (num) => { return (num / 10).toFixed(1) }
 let capitalize = (string) => {
   return string.charAt(0).toUpperCase() + string.slice(1)
 }
+let quoteElem = document.getElementById("quote")
+let setupElem = document.getElementById("setup")
+let jokeElem = document.getElementById("joke")
 
 // grabbing array from localStorage and setting it to caughtPokemonArr variable. If array does not exist, sets it to empty array. Parse with JSON.parse so a real array is returned, not a string array
 let caughtPokemonArr = JSON.parse(localStorage.getItem("caughtPokemonArr")) || []
@@ -60,6 +63,10 @@ pokeCollection.forEach(item => {
         document.getElementById("about-screen").innerHTML = `Height: ${addDecimal(pokemon.height)}m
         Weight: ${addDecimal(pokemon.weight)}kg
         `
+        //clears interact box 
+        quoteElem.innerHTML = ""
+        setupElem.innerHTML = ""
+        jokeElem.innerHTML = ""
       })
   })
 })
@@ -71,9 +78,6 @@ document.getElementById("random").addEventListener("click", event => {
   event.preventDefault()
   // each event will be set to a random number and the click will generate random number 
   let randomNumber = Math.floor(Math.random() * 3)
-  const quoteElem = document.getElementById("quote")
-  const setupElem = document.getElementById("setup")
-  const jokeElem = document.getElementById("joke")
   let i = 0
   let speed = 10
 
@@ -84,11 +88,6 @@ document.getElementById("random").addEventListener("click", event => {
         let punchline = res.data.punchline
         let setup = res.data.setup
         let words = `${setup} - ${punchline}`
-
-        // Resetting innerHTMl to blank before new text is generated
-        setupElem.innerHTML = ""
-        quoteElem.innerHTML = ""
-        jokeElem.innerHTML = ""
 
         // type writer function
         function typeWriter() {
@@ -107,10 +106,6 @@ document.getElementById("random").addEventListener("click", event => {
       .then(res => {
         // Grabbing info from API and setting into strings
         let quote = res.data.content
-        // Resetting innerHTMl to blank before new text is generated
-        quoteElem.innerHTML = ""
-        setupElem.innerHTML = ""
-        jokeElem.innerHTML = ""
         // // type writer function
         function typeWriter2() {
           if (i < quote.length) {
@@ -128,10 +123,6 @@ document.getElementById("random").addEventListener("click", event => {
       .then(res => {
         // Grabbing info from API and setting into strings
         let joke = res.data.joke
-        // Resetting innerHTMl to blank before new text is generated
-        quoteElem.innerHTML = ""
-        setupElem.innerHTML = ""
-        jokeElem.innerHTML = ""
         // type writer function
         function typeWriter3() {
           if (i < joke.length) {
@@ -146,6 +137,3 @@ document.getElementById("random").addEventListener("click", event => {
       .catch(err => console.log(err))
   }
 })
-
-
-
