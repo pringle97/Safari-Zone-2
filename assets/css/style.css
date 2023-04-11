@@ -18,11 +18,9 @@ body {
   padding: 0 2% 2% 2%;
 }
 
-
 .modal {
   width: 70%;
 }
-
 
 .page-footer {
   background: linear-gradient(90deg, #ff1654 35%, #247ba0 60%);
@@ -84,14 +82,9 @@ body {
   margin-bottom: 25px;
 }
 
-
-
 .actionbtns-container {
   padding-bottom: 30px;
 }
-
-
-
 
 h4 {
   text-align: center;

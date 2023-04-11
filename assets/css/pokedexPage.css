@@ -61,12 +61,8 @@ body {
   background-color: #fbeeda;
 }
 
-
-
 .contianer2 {
-
   border: solid black;
-
 }
 
 .pokemonList {
@@ -83,7 +79,6 @@ body {
     inset 0 0 0 3px black;
   margin-top: 75px;
   height: 560px;
-
   overflow-y: scroll;
 }
 
@@ -92,7 +87,6 @@ body {
 }
 
 .pokemonInteract {
-
   border: solid black;
   margin: 75px;
 }
@@ -101,7 +95,6 @@ body {
   background: linear-gradient(90deg, #ff1654 35%, #247ba0 60%);
   text-align: center;
   padding-bottom: 10px;
-
 }
 
 h4 {
@@ -111,8 +104,6 @@ h4 {
 .name {
   text-align: center;
 }
-
-
 
 .pokemonInteract {
   font-size: 12px;
@@ -796,8 +787,6 @@ input {
   background-color: #9e9d9d;
 }
 
-
-
 .sprites {
   height: 111px;
   width: 171px;
@@ -809,4 +798,3 @@ h3 {
   background: linear-gradient(90deg, #ff1654 35%, #247ba0 60%);
   color: white;
 }
-

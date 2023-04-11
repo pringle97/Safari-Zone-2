@@ -16,7 +16,6 @@ let ball = document.getElementById("ball")
 let throwBerry = document.getElementById("berry")
 let throwRock = document.getElementById("rock")
 let runAway = document.getElementById("run-away")
-console.log(x)
 
 function catchPokemon() {
   let roll = Math.floor(Math.random() * 3)
@@ -53,7 +52,6 @@ document.getElementById("start-button").addEventListener("click", event => {
   // set random pokemon number to 1-151
   const maxPokemonNumber = 251
   pokemonNum = (Math.floor(Math.random() * maxPokemonNumber) + 1)
-  console.log(pokemonNum)
   document.getElementById("pokemonImg").innerHTML = ""
 
   // grabbing information from pokemon API
@@ -61,7 +59,6 @@ document.getElementById("start-button").addEventListener("click", event => {
     .then(res => {
       // pokemon api data 
       let pokemon = res.data
-      console.log(pokemon)
       // pokemon api hi-res sprites 
       let svg = pokemon.sprites.other.dream_world.front_default
 
@@ -83,7 +80,6 @@ document.getElementById("start-button").addEventListener("click", event => {
         `
         // if statement if the pokemon has 1 type attributes
       } else {
-        console.log(pokemon.types[0].type.name)
         document.getElementById("pokemonImg").innerHTML = `
         <img class="imageArt" src ="${svg}" alt="${pokemon.species.name}" width="400" height="400">
         `
@@ -100,8 +96,6 @@ document.getElementById("start-button").addEventListener("click", event => {
         `
       }
     })
-  // .catch (err => console.log(err))
-
 });
 
 
@@ -114,13 +108,8 @@ document.getElementById("ball").addEventListener("click", event => {
     .then(res => {
 
       let pokemon = res.data
-      console.log(pokemon)
       let pokemonName = pokemon.name
-      console.log(pokemonName)
       let pokeList = document.getElementById("pokeList")
-
-
-
       let caughtPokemonArr = JSON.parse(localStorage.getItem("caughtPokemonArr")) || []
       // grabbing array from localStorage and setting it to caughtPokemonArr variable. If array does not exist, sets it to empty array. Parse with JSON.parse so a real array is returned, not a string array
 
@@ -134,7 +123,6 @@ document.getElementById("ball").addEventListener("click", event => {
         caughtPokemonArr.push(pokemonName)
         // taking array and setting as string to be put in local storage 
         localStorage.setItem("caughtPokemonArr", JSON.stringify(caughtPokemonArr))
-        console.log(pokemonName, "caughtPokemonArr after we pushed stuff")
 
         // when pokemon is caught opens modal for alert 
         document.getElementById("caughtStatus").innerHTML = `You've caught ${capitalize(pokemon.species.name)}!`
@@ -142,7 +130,6 @@ document.getElementById("ball").addEventListener("click", event => {
         // type writer function variables
         let pokemonStatus = document.getElementById("caughtStatus").innerHTML
         // let speed = 50
-        console.log(pokemonStatus)
         document.getElementById("caughtStatus").innerHTML = ""
 
         // initiate type writer function for caught pokemon 
@@ -153,7 +140,7 @@ document.getElementById("ball").addEventListener("click", event => {
         // write function for pokemon running away here 
         let pokemonRan = didPokemonRun()
         if (pokemonRan) {
-          
+
           document.getElementById("pokemonImg").innerHTML = `
         <img src="" alt="">
         `

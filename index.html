@@ -88,10 +88,6 @@
     </div>
   </div>
 
-
-
-
-
   <!-- Modal Structure -->
   <div id="modal2" class="modal bottom-sheet">
     <div class="modal-content">
@@ -131,7 +127,6 @@
         currentSong = $(this).parent().index()
         $(this).parent().addClass("current-song")
       })
-
       $("#audioPlayer")[0].addEventListener("ended", function () {
         currentSong++
         if (currentSong == $("playlist li a").length)
@@ -141,7 +136,6 @@
         $("audioPlayer")[0].src = $("#playlist li a")[currentSong].href
         $("#audioPlayer")[0].play()
       })
-
       audioPlayer()
     }
   </script>
