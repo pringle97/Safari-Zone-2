@@ -4,8 +4,6 @@ M.AutoInit()
 // lowers audio volme when audio is played
 let audio = document.getElementById("audio");
 audio.volume = 0.1;
-
-// setting values 
 let pokeList = document.getElementById("pokeList")
 let addDecimal = (num) => { return (num / 10).toFixed(1) }
 let capitalize = (string) => {
@@ -13,7 +11,7 @@ let capitalize = (string) => {
 }
 let quoteElem = document.getElementById("quote")
 let setupElem = document.getElementById("setup")
-let jokeElem = document.getElementById("joke")
+let jokeElem = document.getElementById("geekJoke")
 
 // grabbing array from localStorage and setting it to caughtPokemonArr variable. If array does not exist, sets it to empty array. Parse with JSON.parse so a real array is returned, not a string array
 let caughtPokemonArr = JSON.parse(localStorage.getItem("caughtPokemonArr")) || []
@@ -67,6 +65,8 @@ pokeCollection.forEach(item => {
         quoteElem.innerHTML = ""
         setupElem.innerHTML = ""
         jokeElem.innerHTML = ""
+        //stop typewriter 
+
       })
   })
 })
@@ -82,17 +82,18 @@ document.getElementById("random").addEventListener("click", event => {
   let speed = 10
 
   if (randomNumber === 0) {
-    axios.get("https://us-central1-dadsofunny.cloudfunctions.net/DadJokes/random/jokes")
+    axios.get("https://icanhazdadjoke.com/", {
+      headers: { "Accept": "application/json" },
+    })
       .then(res => {
-        // Grabbing info from API and setting into strings
-        let punchline = res.data.punchline
-        let setup = res.data.setup
-        let words = `${setup} - ${punchline}`
-
-        // type writer function
+        let dadJoke = res.data.joke
+        quoteElem.innerHTML = ""
+        setupElem.innerHTML = ""
+        jokeElem.innerHTML = ""
+        // typewriter function
         function typeWriter() {
-          if (i < words.length) {
-            document.getElementById("setup").innerHTML += words.charAt(i)
+          if (i < dadJoke.length) {
+            document.getElementById("setup").innerHTML += dadJoke.charAt(i)
             i++
             setTimeout(typeWriter, speed)
           }
@@ -100,22 +101,25 @@ document.getElementById("random").addEventListener("click", event => {
         // initiation of type writer function for dad joke
         typeWriter()
       })
-  } else if (randomNumber === 1) {
+  } else if (randomNumber === 0) {
     // axios get for other joke
     axios.get("https://api.quotable.io/random")
       .then(res => {
         // Grabbing info from API and setting into strings
         let quote = res.data.content
-        // // type writer function
-        function typeWriter2() {
+        quoteElem.innerHTML = ""
+        setupElem.innerHTML = ""
+        jokeElem.innerHTML = ""
+        // type writer function
+        function typeWriter() {
           if (i < quote.length) {
             document.getElementById("quote").innerHTML += quote.charAt(i)
             i++
-            setTimeout(typeWriter2, speed)
+            setTimeout(typeWriter, speed)
           }
         }
         // intiation for type writer function for random quote
-        typeWriter2()
+        typeWriter()
       })
       .catch(err => console.log(err))
   } else {
@@ -123,16 +127,19 @@ document.getElementById("random").addEventListener("click", event => {
       .then(res => {
         // Grabbing info from API and setting into strings
         let joke = res.data.joke
+        quoteElem.innerHTML = ""
+        setupElem.innerHTML = ""
+        jokeElem.innerHTML = ""
         // type writer function
-        function typeWriter3() {
+        function typeWriter() {
           if (i < joke.length) {
-            document.getElementById("quote").innerHTML += joke.charAt(i)
+            document.getElementById("geekJoke").innerHTML += joke.charAt(i)
             i++
-            setTimeout(typeWriter3, speed)
+            setTimeout(typeWriter, speed)
           }
         }
         // initiation of type writer function for random joke
-        typeWriter3()
+        typeWriter()
       })
       .catch(err => console.log(err))
   }
