@@ -17,14 +17,23 @@ let jokeElem = document.getElementById("geekJoke")
 let caughtPokemonArr = JSON.parse(localStorage.getItem("caughtPokemonArr")) || []
 
 // loop for array and rendering onto list 
-caughtPokemonArr.forEach((pokemon, i) => {
+caughtPokemonArr.forEach((pokemon) => {
   let listElem = document.createElement("ul")
   listElem.className = "collection-item waves-effect z-depth-1"
   listElem.innerHTML = `
   <a class="btn-flat"><h6>${pokemon}</h6></a>
-  <a class="btn-flat delete right" data-index="${i}"><i class="material-icons">cancel</i></a></a>
+  <a class="btn-flat delete right" id="deleteFromPokedex"><i class="material-icons">cancel</i></a>
   `
   document.getElementById("pokeList").append(listElem)
+  //delete pokemon from pokedex
+  // document.getElementById("deleteFromPokedex").addEventListener("click", event => {
+  //   function deletePokemon() {
+  //     let existingPokemon = JSON.parse(localStorage.getItem("caughtPokemonArr"))
+  //     existingPokemon.splice(index, 1)
+  //     localStorage.setItem("caughtPokemonArr", JSON.stringify(existingPokemon))
+  //   }
+  //   deletePokemon()
+  // })
 })
 
 // generator value from user mouse clicks
@@ -121,7 +130,7 @@ document.getElementById("random").addEventListener("click", event => {
         // intiation for type writer function for random quote
         typeWriter()
       })
-      .catch(err => console.log(err))
+      // .catch(err => console.log(err))
   } else {
     axios.get("https://geek-jokes.sameerkumar.website/api?format=json")
       .then(res => {

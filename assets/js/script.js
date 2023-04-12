@@ -1,3 +1,5 @@
+// the one mcss function to rule them all (conveniently initializes everything so components work) https://materializecss.com/auto-init.html
+M.AutoInit()
 // lowers audio volme when audio is played
 let audio = document.getElementById("audio");
 audio.volume = 0.1;
@@ -39,13 +41,11 @@ function typeWriter(i, words, speed) {
   }
 }
 
-// the one mcss function to rule them all (conveniently initializes everything so components work) https://materializecss.com/auto-init.html
-M.AutoInit()
-
 document.getElementById("rock").addEventListener("click", event => {
   event.preventDefault()
 
 })
+
 // click event to start random pokemon generator 
 document.getElementById("start-button").addEventListener("click", event => {
   event.preventDefault()
@@ -98,49 +98,38 @@ document.getElementById("start-button").addEventListener("click", event => {
     })
 });
 
-
-
 // throw ball click event
 document.getElementById("ball").addEventListener("click", event => {
   event.preventDefault()
 
   axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonNum}`)
     .then(res => {
-
       let pokemon = res.data
       let pokemonName = pokemon.name
       let pokeList = document.getElementById("pokeList")
       let caughtPokemonArr = JSON.parse(localStorage.getItem("caughtPokemonArr")) || []
       // grabbing array from localStorage and setting it to caughtPokemonArr variable. If array does not exist, sets it to empty array. Parse with JSON.parse so a real array is returned, not a string array
-
-
       // random number generator to capture pokemon
       let wasCaught = catchPokemon()
-
       //  if statement for caught pokemon vs uncaught pokemon
       if (wasCaught) {
         // if caught push pokemon name into json array
         caughtPokemonArr.push(pokemonName)
         // taking array and setting as string to be put in local storage 
         localStorage.setItem("caughtPokemonArr", JSON.stringify(caughtPokemonArr))
-
         // when pokemon is caught opens modal for alert 
         document.getElementById("caughtStatus").innerHTML = `You've caught ${capitalize(pokemon.species.name)}!`
-
         // type writer function variables
         let pokemonStatus = document.getElementById("caughtStatus").innerHTML
         // let speed = 50
         document.getElementById("caughtStatus").innerHTML = ""
-
         // initiate type writer function for caught pokemon 
         typeWriter(0, (pokemonStatus), 50)
       } else {
         document.getElementById(`caughtStatus`).innerHTML = ""
-
-        // write function for pokemon running away here 
+        // function for pokemon running away 
         let pokemonRan = didPokemonRun()
         if (pokemonRan) {
-
           document.getElementById("pokemonImg").innerHTML = `
         <img src="" alt="">
         `
@@ -153,5 +142,3 @@ document.getElementById("ball").addEventListener("click", event => {
       }
     })
 })
-
-//delete pokemon from dex
