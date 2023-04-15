@@ -19,11 +19,13 @@ document.getElementById(`alan`).addEventListener(`click`, () => {
   document.getElementById(`type-screen`).innerHTML =`Type: Psychic`
   document.getElementById(`id-screen`).innerHTML =`#7`
   document.getElementById(`main-screen`).innerHTML = `<img class="pictures" src="assets/pictures/alanPic.jpg">`
+
   // type writer values
   let i = 0;
   let speed = 10;
   let words = `Hello, I’m Alan. My favorite hobbies are gaming and eating. Some games that I enjoy playing are league of legends, csgo, and apex.`
   interactElem.innerHTML = ``
+  
   // type writer function that grabs innerHTML to create type writer effect
   function typeWriter() {
     if (i < words.length) {

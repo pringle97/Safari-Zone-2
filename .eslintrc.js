@@ -13,7 +13,8 @@ module.exports = {
     "rules": {
         "quotes": ["error", "double"]
         "no-multiple-empty-lines": "error",
-        "array-bracket-newline": [ "error", "always" ],
-        ""
+        "array-bracket-newline": ["error", "always"],
+        "array-element-newline": ["error", "always"],
+        "semi": ["error", "always"]
     }
 }

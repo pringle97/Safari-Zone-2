@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/pringle97/Safari-Zone-2#readme",
   "devDependencies": {
-    "eslint": "^8.22.0"
+    "eslint": "^8.38.0"
   }
 }

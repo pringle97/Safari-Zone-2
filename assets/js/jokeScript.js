@@ -152,4 +152,4 @@ document.getElementById("random").addEventListener("click", event => {
       })
       .catch(err => console.log(err))
   }
-})
+});
