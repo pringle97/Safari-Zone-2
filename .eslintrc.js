@@ -18,6 +18,7 @@ module.exports = {
     "array-element-newline": [
       "error",
       "always"
-    ]
+    ],
+    "no-multiple-empty-lines": "error"
   }
 }
