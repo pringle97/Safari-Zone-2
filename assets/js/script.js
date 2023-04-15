@@ -101,7 +101,6 @@ document.getElementById("start-button").addEventListener("click", event => {
 // throw ball click event
 document.getElementById("ball").addEventListener("click", event => {
   event.preventDefault()
-
   axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonNum}`)
     .then(res => {
       let pokemon = res.data
@@ -121,12 +120,12 @@ document.getElementById("ball").addEventListener("click", event => {
         document.getElementById("caughtStatus").innerHTML = `You've caught ${capitalize(pokemon.species.name)}!`
         // type writer function variables
         let pokemonStatus = document.getElementById("caughtStatus").innerHTML
-        // let speed = 50
-        document.getElementById("caughtStatus").innerHTML = ""
+
+        document.getElementById("caughtStatus").innerHTML = ``
         // initiate type writer function for caught pokemon 
         typeWriter(0, (pokemonStatus), 50)
       } else {
-        document.getElementById(`caughtStatus`).innerHTML = ""
+        document.getElementById(`caughtStatus`).innerHTML = ``
         // function for pokemon running away 
         let pokemonRan = didPokemonRun()
         if (pokemonRan) {

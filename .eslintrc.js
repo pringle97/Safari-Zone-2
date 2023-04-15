@@ -12,5 +12,8 @@ module.exports = {
     },
     "rules": {
         "quotes": ["error", "double"]
+        "no-multiple-empty-lines": "error",
+        "array-bracket-newline": [ "error", "always" ],
+        ""
     }
 }
