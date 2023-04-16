@@ -12,10 +12,10 @@ audio2.volume = 0.1
 const capitalize = (string) => {
   return string.charAt(0).toUpperCase() + string.slice(1)
 }
-// generating number between 1 and 100
+// less likely to run but harder to catch
 const throwBerry = document.getElementById("berry")
+// easier to catch but run rate is higher
 const throwRock = document.getElementById("rock")
-const runAway = document.getElementById("run-away")
 
 function catchPokemon () {
   const roll = Math.floor(Math.random() * 3)
@@ -46,7 +46,6 @@ document.getElementById("rock").addEventListener("click", event => {
 // click event to start random pokemon generator
 document.getElementById("start-button").addEventListener("click", event => {
   event.preventDefault()
-  // set random pokemon number to 1-151
   const maxPokemonNumber = 251
   pokemonNum = (Math.floor(Math.random() * maxPokemonNumber) + 1)
   document.getElementById("pokemonImg").innerHTML = ""

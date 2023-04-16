@@ -12,17 +12,17 @@ const capitalize = (string) => {
 const quoteElem = document.getElementById("quote")
 const setupElem = document.getElementById("setup")
 const jokeElem = document.getElementById("geekJoke")
+let listElem = document.createElement("ul")
 
 // grabbing array from localStorage and setting it to caughtPokemonArr variable. If array does not exist, sets it to empty array. Parse with JSON.parse so a real array is returned, not a string array
 const caughtPokemonArr = JSON.parse(localStorage.getItem("caughtPokemonArr")) || []
 
 // loop for array and rendering onto list
 caughtPokemonArr.forEach((pokemon) => {
-  const listElem = document.createElement("ul")
   listElem.className = "collection-item waves-effect z-depth-1"
   listElem.innerHTML = `
   <a class="btn-flat"><h6>${pokemon}</h6></a>
-  <a class="btn-flat delete right" id="deleteFromPokedex"><i class="material-icons">cancel</i></a>
+  <a class="btn-flat delete right"><i class="material-icons">cancel</i></a>
   `
   document.getElementById("pokeList").append(listElem)
   // delete pokemon from pokedex
@@ -35,6 +35,15 @@ caughtPokemonArr.forEach((pokemon) => {
   //   deletePokemon()
   // })
 })
+
+// function deletePokemon(pokemon) {
+//   event.preventDefault()
+//   if (pokemon.target.classList.contains("delete")) {
+//     if (confirm("Are you sure?")) {
+//       let listElem = pokmeon.target.parentNode
+//     }
+//   }
+// }
 
 // generator value from user mouse clicks
 const pokeCollection = document.querySelectorAll(".collection-item")
@@ -99,7 +108,7 @@ document.getElementById("random").addEventListener("click", event => {
         setupElem.innerHTML = ""
         jokeElem.innerHTML = ""
         // typewriter function
-        function typeWriter () {
+        function typeWriter() {
           if (i < dadJoke.length) {
             document.getElementById("setup").innerHTML += dadJoke.charAt(i)
             i++
@@ -120,7 +129,7 @@ document.getElementById("random").addEventListener("click", event => {
         setupElem.innerHTML = ""
         jokeElem.innerHTML = ""
         // type writer function
-        function typeWriter () {
+        function typeWriter() {
           if (i < quote.length) {
             document.getElementById("quote").innerHTML += quote.charAt(i)
             i++
@@ -130,7 +139,7 @@ document.getElementById("random").addEventListener("click", event => {
         // intiation for type writer function for random quote
         typeWriter()
       })
-      // .catch(err => console.log(err))
+    // .catch(err => console.log(err))
   } else {
     axios.get("https://geek-jokes.sameerkumar.website/api?format=json")
       .then(res => {
@@ -140,7 +149,7 @@ document.getElementById("random").addEventListener("click", event => {
         setupElem.innerHTML = ""
         jokeElem.innerHTML = ""
         // type writer function
-        function typeWriter () {
+        function typeWriter() {
           if (i < joke.length) {
             document.getElementById("geekJoke").innerHTML += joke.charAt(i)
             i++
