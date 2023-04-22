@@ -13,7 +13,7 @@ const capitalize = (string) => {
   return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
-function typeWriter(i, words, speed) {
+function typeWriter (i, words, speed) {
   if (i < words.length) {
     document.getElementById("caughtStatus").innerHTML += words.charAt(i)
     i++
@@ -21,40 +21,40 @@ function typeWriter(i, words, speed) {
   }
 }
 
-function addDecimal(num) {
+function addDecimal (num) {
   return (num / 10).toFixed(1)
 }
 
-function catchPokemon() {
+function catchPokemon () {
   const roll = Math.floor(Math.random() * 3)
   console.log(roll)
   return roll === 1
 }
 
-function didPokemonRun() {
+function didPokemonRun () {
   const roll = Math.floor(Math.random() * 2)
   return roll === 1
 }
 
 // easier to catch but run rate is higher
-document.getElementById("rock").addEventListener("click", event => {
-  event.preventDefault()
-  function throwRock() {
-    const roll = 
-  }
-  document.getElementById("cardContent").innerHTML = ""
-  typeWriter(0, "The Pokemon is angry!", 50)
-})
+// document.getElementById("rock").addEventListener("click", event => {
+//   event.preventDefault()
+//   function throwRock() {
+//     const roll =
+//   }
+//   document.getElementById("cardContent").innerHTML = ""
+//   typeWriter(0, "The Pokemon is angry!", 50)
+// })
 
 // less likely to run but harder to catch
-document.getElementById("berry").addEventListener("click", event => {
-  event.preventDefault()
-  function throwBerry() {
-    const roll = 
-  }
-  document.getElementById("cardContent").innerHTML = ""
-  typeWriter(0, "The Pokemon is eating!", 50)
-})
+// document.getElementById("berry").addEventListener("click", event => {
+//   event.preventDefault()
+//   function throwBerry() {
+//     const roll =
+//   }
+//   document.getElementById("cardContent").innerHTML = ""
+//   typeWriter(0, "The Pokemon is eating!", 50)
+// })
 // click event to start random pokemon generator
 document.getElementById("start-button").addEventListener("click", event => {
   event.preventDefault()
