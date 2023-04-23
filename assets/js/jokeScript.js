@@ -2,9 +2,6 @@
 // allows initialization for modals and nav bar for materialize
 M.AutoInit()
 
-// lowers audio volme when audio is played
-const audio = document.getElementById("audio")
-audio.volume = 0.1
 const addDecimal = (num) => { return (num / 10).toFixed(1) }
 const capitalize = (string) => {
   return string.charAt(0).toUpperCase() + string.slice(1)

@@ -1,13 +1,6 @@
 /* eslint-disable no-undef */
 // the one mcss function to rule them all (conveniently initializes everything so components work) https://materializecss.com/auto-init.html
 M.AutoInit()
-// lowers audio volme when audio is played
-const audio = document.getElementById("audio")
-audio.volume = 0.1
-const audio1 = document.getElementById("audio1")
-audio1.volume = 0.1
-const audio2 = document.getElementById("audio2")
-audio2.volume = 0.1
 
 const capitalize = (string) => {
   return string.charAt(0).toUpperCase() + string.slice(1)
@@ -61,7 +54,6 @@ document.getElementById("start-button").addEventListener("click", event => {
   const maxPokemonNumber = 251
   pokemonNum = (Math.floor(Math.random() * maxPokemonNumber) + 1)
   document.getElementById("pokemonImg").innerHTML = ""
-
   // grabbing information from pokemon API
   axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonNum}`)
     .then(res => {
@@ -69,7 +61,6 @@ document.getElementById("start-button").addEventListener("click", event => {
       const pokemon = res.data
       // pokemon api hi-res sprites
       const svg = pokemon.sprites.other.dream_world.front_default
-
       // if statement if the pokemon has 2 type attributes
       if (pokemon.types[1]) {
         document.getElementById("pokemonImg").innerHTML = `
@@ -127,7 +118,6 @@ document.getElementById("ball").addEventListener("click", event => {
         document.getElementById("caughtStatus").innerHTML = `You've caught ${capitalize(pokemon.species.name)}!`
         // type writer function variables
         const pokemonStatus = document.getElementById("caughtStatus").innerHTML
-
         document.getElementById("caughtStatus").innerHTML = ""
         // initiate type writer function for caught pokemon
         typeWriter(0, (pokemonStatus), 50)

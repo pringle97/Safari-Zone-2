@@ -2,10 +2,6 @@
 // eslint-disable-next-line no-undef
 M.AutoInit()
 
-// lowers audio volme when audio is played
-const audio = document.getElementById("audio")
-audio.volume = 0.1
-
 // values from pokedex
 const interactElem = document.getElementById("interact")
 const nameScreen = document.getElementById("name-screen")
