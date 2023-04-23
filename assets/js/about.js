@@ -6,124 +6,75 @@ M.AutoInit()
 const audio = document.getElementById("audio")
 audio.volume = 0.1
 
-// constant values
+// values from pokedex
 const interactElem = document.getElementById("interact")
+const nameScreen = document.getElementById("name-screen")
+const aboutScreen = document.getElementById("about-screen")
+const typeScreen = document.getElementById("type-screen")
+const idScreen = document.getElementById("id-screen")
+const mainScreen = document.getElementById("main-screen")
 
-// click event to grab Alans information
+// grabs innerHTML and displays text on screen with type writer effect
+function typeWriter (i, words, speed) {
+  if (i < words.length) {
+    document.getElementById("interact").innerHTML += words.charAt(i)
+    i++
+    setTimeout(typeWriter, speed, i, words, speed)
+  }
+}
+
+// click event to display Alans information
 document.getElementById("alan").addEventListener("click", () => {
-  document.getElementById("name-screen").innerHTML = "Alan Truong"
-  document.getElementById("about-screen").innerHTML = "Height: 1.65m Weight: 58.97kg"
-  document.getElementById("type-screen").innerHTML = "Type: Psychic"
-  document.getElementById("id-screen").innerHTML = "#7"
-  document.getElementById("main-screen").innerHTML = "<img class=\"pictures\" src=\"assets/pictures/alanPic.jpg\">"
-
-  // type writer values
-  let i = 0
-  const speed = 10
-  const words = "Hello, I’m Alan. My favorite hobbies are gaming and eating. Some games that I enjoy playing are league of legends, csgo, and apex."
+  nameScreen.innerHTML = "Alan Truong"
+  aboutScreen.innerHTML = "Height: 1.65m Weight: 58.97kg"
+  typeScreen.innerHTML = "Type: Psychic"
+  idScreen.innerHTML = "#7"
+  mainScreen.innerHTML = "<img class=\"pictures\" src=\"assets/pictures/alanPic.jpg\">"
   interactElem.innerHTML = ""
-
-  // type writer function that grabs innerHTML to create type writer effect
-  function typeWriter () {
-    if (i < words.length) {
-      document.getElementById("interact").innerHTML += words.charAt(i)
-      i++
-      setTimeout(typeWriter, speed)
-    }
-  }
-  typeWriter()
+  typeWriter(0, "Hello, I’m Alan. My favorite hobbies are gaming and eating. Some games that I enjoy playing are league of legends, csgo, and apex.", 10)
 })
 
-// click event to grab Kevins information
+// click event to display Kevins information
 document.getElementById("kevin").addEventListener("click", () => {
-  document.getElementById("name-screen").innerHTML = "Kevin Kelley"
-  document.getElementById("about-screen").innerHTML = "Height: 1.80m Weight: 64.86kg"
-  document.getElementById("type-screen").innerHTML = "Type :Normal"
-  document.getElementById("id-screen").innerHTML = "#88"
-  document.getElementById("main-screen").innerHTML = "<img class=\"pictures\" src=\"assets/pictures/kevinPic.jpg\">"
-  // type writer values
-  let i = 0
-  const speed = 10
-  const words = "Hi. I like Pokemon. Why you ask? Oh you didn't ask? Okay. I'm going to go now."
+  nameScreen.innerHTML = "Kevin Kelley"
+  aboutScreen.innerHTML = "Height: 1.80m Weight: 64.86kg"
+  typeScreen.innerHTML = "Type :Normal"
+  idScreen.innerHTML = "#88"
+  mainScreen.innerHTML = "<img class=\"pictures\" src=\"assets/pictures/kevinPic.jpg\">"
   interactElem.innerHTML = ""
-  // type writer function that grabs innerHTML to create type writer effect
-  function typeWriter () {
-    if (i < words.length) {
-      document.getElementById("interact").innerHTML += words.charAt(i)
-      i++
-      setTimeout(typeWriter, speed)
-    }
-  }
-  typeWriter()
+  typeWriter(0, "Hi. I like Pokemon. Why you ask? Oh you didn't ask? Okay. I'm going to go now.", 10)
 })
 
-// click event to grab Malia information
+// click event to display Malia information
 document.getElementById("malia").addEventListener("click", () => {
-  document.getElementById("name-screen").innerHTML = "Malia Pringle"
-  document.getElementById("about-screen").innerHTML = "Height: 1.63m Weight: 70.3kg"
-  document.getElementById("type-screen").innerHTML = "Type: Water"
-  document.getElementById("id-screen").innerHTML = "#27"
-  document.getElementById("main-screen").innerHTML = "<img class=\"pictures\" src=\"assets/pictures/maliaPic.jpg\">"
-  // type writer values
-  let i = 0
-  const speed = 10
-  const words = "Hey there! Thanks for checking out our project! I recently graduated from a full stack web development boot camp and I'm searching for work. Please feel free to reach out!"
+  nameScreen.innerHTML = "Malia Pringle"
+  aboutScreen.innerHTML = "Height: 1.63m Weight: 70.3kg"
+  typeScreen.innerHTML = "Type: Water"
+  idScreen.innerHTML = "#27"
+  mainScreen.innerHTML = "<img class=\"pictures\" src=\"assets/pictures/maliaPic.jpg\">"
   interactElem.innerHTML = ""
-  // type writer function that grabs innerHTML to create type writer effect
-  function typeWriter () {
-    if (i < words.length) {
-      document.getElementById("interact").innerHTML += words.charAt(i)
-      i++
-      setTimeout(typeWriter, speed)
-    }
-  }
-  typeWriter()
+  typeWriter(0, "Hey there! Thanks for checking out our project! I recently graduated from a full stack web development boot camp and I'm periodically adding new features to this project. I am also searching for work. Please feel free to reach out!", 10)
 })
 
 // click event to grab Nathan information
 document.getElementById("nathan").addEventListener("click", () => {
-  document.getElementById("name-screen").innerHTML = "Nathan Montelli"
-  document.getElementById("about-screen").innerHTML = "Height: 1.83m Weight: 70.3kg"
-  document.getElementById("type-screen").innerHTML = "Type: Grass/Rock"
-  document.getElementById("id-screen").innerHTML = "#92"
-  document.getElementById("main-screen").innerHTML = "<img class=\"pictures\" src=\"assets/pictures/nathanPic.jpg\">"
-  // type writer values
-  let i = 0
-  const speed = 10
-  const words = "Hello, I'm Nathan. I'm currently a student in the UCI coding bootcamp. Some of my favorite things to do are travel, try out new restaurants, rock climb, and garden."
+  nameScreen.innerHTML = "Nathan Montelli"
+  aboutScreen.innerHTML = "Height: 1.83m Weight: 70.3kg"
+  typeScreen.innerHTML = "Type: Grass/Rock"
+  idScreen.innerHTML = "#92"
+  mainScreen.innerHTML = "<img class=\"pictures\" src=\"assets/pictures/nathanPic.jpg\">"
   interactElem.innerHTML = ""
-  // type writer function that grabs innerHTML to create type writer effect
-  function typeWriter () {
-    if (i < words.length) {
-      document.getElementById("interact").innerHTML += words.charAt(i)
-      i++
-      setTimeout(typeWriter, speed)
-    }
-  }
-  typeWriter()
+  typeWriter(0, "Hello, I'm Nathan. I'm currently a student in the UCI coding bootcamp. Some of my favorite things to do are travel, try out new restaurants, rock climb, and garden.", 10)
 })
 
 // click event to grab Peters information
 document.getElementById("peter").addEventListener("click", () => {
-  document.getElementById("name-screen").innerHTML = "Peter Song"
-  document.getElementById("about-screen").innerHTML = "Height: 1.72m Weight: 65.77kg"
-  document.getElementById("type-screen").innerHTML = "Type: Electric"
-  document.getElementById("id-screen").innerHTML = "#9"
-  document.getElementById("main-screen").innerHTML = "<img class=\"pictures\" src=\"assets/pictures/peterPic1.jpg\">"
-
-  // type writer values
-  let i = 0
-  const speed = 10
-  const words = "Hey! My name is Peter Song. My favorite hobbies are sports activites(Rock Climbing, Basketball, Football and Badminton) and video games(Currently League of Legends and Destiny 2)."
+  nameScreen.innerHTML = "Peter Song"
+  aboutScreen.innerHTML = "Height: 1.72m Weight: 65.77kg"
+  typeScreen.innerHTML = "Type: Electric"
+  idScreen.innerHTML = "#9"
+  mainScreen.innerHTML = "<img class=\"pictures\" src=\"assets/pictures/peterPic1.jpg\">"
   interactElem.innerHTML = ""
 
-  // type writer function that grabs innerHTML to create type writer effect
-  function typeWriter () {
-    if (i < words.length) {
-      document.getElementById("interact").innerHTML += words.charAt(i)
-      i++
-      setTimeout(typeWriter, speed)
-    }
-  }
-  typeWriter()
+  typeWriter(0, "Hey! My name is Peter Song. My favorite hobbies are sports activites(Rock Climbing, Basketball, Football and Badminton) and video games(Currently League of Legends and Destiny 2).", 10)
 })
