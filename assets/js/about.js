@@ -75,6 +75,5 @@ document.getElementById("peter").addEventListener("click", () => {
   idScreen.innerHTML = "#9"
   mainScreen.innerHTML = "<img class=\"pictures\" src=\"assets/pictures/peterPic1.jpg\">"
   interactElem.innerHTML = ""
-
   typeWriter(0, "Hey! My name is Peter Song. My favorite hobbies are sports activites(Rock Climbing, Basketball, Football and Badminton) and video games(Currently League of Legends and Destiny 2).", 10)
 })
