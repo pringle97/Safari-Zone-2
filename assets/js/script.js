@@ -51,7 +51,7 @@ function didPokemonRun () {
 // click event to start random pokemon generator
 document.getElementById("start-button").addEventListener("click", event => {
   event.preventDefault()
-  const maxPokemonNumber = 251
+  const maxPokemonNumber = 386
   pokemonNum = (Math.floor(Math.random() * maxPokemonNumber) + 1)
   document.getElementById("pokemonImg").innerHTML = ""
   // grabbing information from pokemon API
@@ -104,8 +104,8 @@ document.getElementById("ball").addEventListener("click", event => {
     .then(res => {
       const pokemon = res.data
       const pokemonName = pokemon.name
+      // grabbing array from localStorage and setting it to caughtPokemonArr variable. empty array if array doesn't exist. Parse with JSON.parse so a real array is returned, not a string array
       const caughtPokemonArr = JSON.parse(localStorage.getItem("caughtPokemonArr")) || []
-      // grabbing array from localStorage and setting it to caughtPokemonArr variable. If array does not exist, sets it to empty array. Parse with JSON.parse so a real array is returned, not a string array
       // random number generator to capture pokemon
       const wasCaught = catchPokemon()
       //  if statement for caught pokemon vs uncaught pokemon
