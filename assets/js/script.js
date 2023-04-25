@@ -8,7 +8,7 @@ const capitalize = (string) => {
 
 function typeWriter (i, words, speed) {
   if (i < words.length) {
-    document.getElementById("caughtStatus").innerHTML += words.charAt(i)
+    document.getElementById("caught-status").innerHTML += words.charAt(i)
     i++
     setTimeout(typeWriter, speed, i, words, speed)
   }
@@ -35,7 +35,7 @@ function didPokemonRun () {
 //   function throwRock() {
 //     const roll =
 //   }
-//   document.getElementById("cardContent").innerHTML = ""
+//   document.getElementById("card-content").innerHTML = ""
 //   typeWriter(0, "The Pokemon is angry!", 50)
 // })
 
@@ -45,16 +45,16 @@ function didPokemonRun () {
 //   function throwBerry() {
 //     const roll =
 //   }
-//   document.getElementById("cardContent").innerHTML = ""
+//   document.getElementById("card-content").innerHTML = ""
 //   typeWriter(0, "The Pokemon is eating!", 50)
 // })
 // click event to start random pokemon generator
-document.getElementById("start-button").addEventListener("click", event => {
+document.getElementById("explore-button").addEventListener("click", event => {
   event.preventDefault()
-  document.getElementById("throwingButtons").style.display = "block"
+  document.getElementById("throwing-buttons").style.display = "block"
   const maxPokemonNumber = 386
   pokemonNum = (Math.floor(Math.random() * maxPokemonNumber) + 1)
-  document.getElementById("pokemonImg").innerHTML = ""
+  document.getElementById("pokemon-img").innerHTML = ""
   // grabbing information from pokemon API
   axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonNum}`)
     .then(res => {
@@ -64,11 +64,11 @@ document.getElementById("start-button").addEventListener("click", event => {
       const svg = pokemon.sprites.other.dream_world.front_default
       // if statement if the pokemon has 2 type attributes
       if (pokemon.types[1]) {
-        document.getElementById("pokemonImg").innerHTML = `
+        document.getElementById("pokemon-img").innerHTML = `
         <img class="imageArt" src="${svg}" alt="${pokemon.species.name}" width="400" height="400">
         `
         // rendering pokemon information to innerHTML
-        document.getElementById("cardContent").innerHTML = `
+        document.getElementById("card-content").innerHTML = `
         <h5>${capitalize(pokemon.species.name)}</h5>
         <br>
         <h6>Type: ${capitalize(pokemon.types[0].type.name)}, ${capitalize(pokemon.types[1].type.name)}</h6>
@@ -80,11 +80,11 @@ document.getElementById("start-button").addEventListener("click", event => {
         `
         // if statement if the pokemon has 1 type attributes
       } else {
-        document.getElementById("pokemonImg").innerHTML = `
+        document.getElementById("pokemon-img").innerHTML = `
         <img class="imageArt" src ="${svg}" alt="${pokemon.species.name}" width="400" height="400">
         `
         // rendering pokemon information to innerHTML
-        document.getElementById("cardContent").innerHTML = `
+        document.getElementById("card-content").innerHTML = `
         <h5>${capitalize(pokemon.species.name)}</h5>
         <br>
         <h6>Type: ${capitalize(pokemon.types[0].type.name)}</h6>
@@ -116,22 +116,22 @@ document.getElementById("ball").addEventListener("click", event => {
         // taking array and setting as string to be put in local storage
         localStorage.setItem("caughtPokemonArr", JSON.stringify(caughtPokemonArr))
         // when pokemon is caught opens modal for alert
-        document.getElementById("caughtStatus").innerHTML = `You've caught ${capitalize(pokemon.species.name)}!`
+        document.getElementById("caught-status").innerHTML = `You've caught ${capitalize(pokemon.species.name)}!`
         // type writer function variables
-        const pokemonStatus = document.getElementById("caughtStatus").innerHTML
-        document.getElementById("caughtStatus").innerHTML = ""
+        const pokemonStatus = document.getElementById("caught-status").innerHTML
+        document.getElementById("caught-status").innerHTML = ""
         // initiate type writer function for caught pokemon
         typeWriter(0, (pokemonStatus), 40)
       } else {
-        document.getElementById("caughtStatus").innerHTML = ""
+        document.getElementById("caught-status").innerHTML = ""
         // function for pokemon running away
         const pokemonRan = didPokemonRun()
         if (pokemonRan) {
-          document.getElementById("pokemonImg").innerHTML = `
+          document.getElementById("pokemon-img").innerHTML = `
         <img src="" alt="">
         <h6 style="text-align: center">Press explore to keep playing!<h6>
         `
-          document.getElementById("cardContent").innerHTML = ""
+          document.getElementById("card-content").innerHTML = ""
           typeWriter(0, "The Pokemon broke free! The Pokemon ran away!", 40)
         } else {
           typeWriter(0, "The Pokemon broke free!", 40)

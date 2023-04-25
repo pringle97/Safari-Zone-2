@@ -8,7 +8,7 @@ const capitalize = (string) => {
 }
 const quoteElem = document.getElementById("quote")
 const setupElem = document.getElementById("setup")
-const jokeElem = document.getElementById("geekJoke")
+const jokeElem = document.getElementById("geek-joke")
 const listElem = document.createElement("ul")
 
 // grabbing array from localStorage and setting it to caughtPokemonArr variable. If array does not exist, sets it to empty array. Parse with JSON.parse so a real array is returned, not a string array
@@ -148,7 +148,7 @@ document.getElementById("random").addEventListener("click", event => {
         // type writer function
         function typeWriter () {
           if (i < joke.length) {
-            document.getElementById("geekJoke").innerHTML += joke.charAt(i)
+            document.getElementById("geek-joke").innerHTML += joke.charAt(i)
             i++
             setTimeout(typeWriter, speed)
           }
