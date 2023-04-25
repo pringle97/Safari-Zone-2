@@ -51,6 +51,7 @@ function didPokemonRun () {
 // click event to start random pokemon generator
 document.getElementById("start-button").addEventListener("click", event => {
   event.preventDefault()
+  document.getElementById("throwingButtons").style.display = "block"
   const maxPokemonNumber = 386
   pokemonNum = (Math.floor(Math.random() * maxPokemonNumber) + 1)
   document.getElementById("pokemonImg").innerHTML = ""
