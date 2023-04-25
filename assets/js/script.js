@@ -128,6 +128,7 @@ document.getElementById("ball").addEventListener("click", event => {
         if (pokemonRan) {
           document.getElementById("pokemonImg").innerHTML = `
         <img src="" alt="">
+        <h6 style="text-align: center">Press explore to keep playing!<h6>
         `
           document.getElementById("cardContent").innerHTML = ""
           typeWriter(0, "The Pokemon broke free! The Pokemon ran away!", 40)
