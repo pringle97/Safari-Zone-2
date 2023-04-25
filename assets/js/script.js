@@ -120,7 +120,7 @@ document.getElementById("ball").addEventListener("click", event => {
         const pokemonStatus = document.getElementById("caughtStatus").innerHTML
         document.getElementById("caughtStatus").innerHTML = ""
         // initiate type writer function for caught pokemon
-        typeWriter(0, (pokemonStatus), 50)
+        typeWriter(0, (pokemonStatus), 40)
       } else {
         document.getElementById("caughtStatus").innerHTML = ""
         // function for pokemon running away
@@ -130,9 +130,9 @@ document.getElementById("ball").addEventListener("click", event => {
         <img src="" alt="">
         `
           document.getElementById("cardContent").innerHTML = ""
-          typeWriter(0, "The Pokemon broke free! The Pokemon ran away!", 50)
+          typeWriter(0, "The Pokemon broke free! The Pokemon ran away!", 40)
         } else {
-          typeWriter(0, "The Pokemon broke free!", 50)
+          typeWriter(0, "The Pokemon broke free!", 40)
         }
       }
     })
