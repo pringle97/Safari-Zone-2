@@ -48,6 +48,7 @@ function didPokemonRun () {
 //   document.getElementById("card-content").innerHTML = ""
 //   typeWriter(0, "The Pokemon is eating!", 50)
 // })
+
 // click event to start random pokemon generator
 document.getElementById("explore-button").addEventListener("click", event => {
   event.preventDefault()
@@ -131,9 +132,10 @@ document.getElementById("ball").addEventListener("click", event => {
         if (pokemonRan) {
           document.getElementById("pokemon-img").innerHTML = `
         <img src="" alt="">
-        <h6 style="text-align: center">Press explore to keep playing!<h6>
+        <h6 style="text-align: center;">Press explore to keep playing!</h6>
         `
           document.getElementById("card-content").style.display = "none"
+          document.getElementById("throwing-buttons").style.display = "none"
           typeWriter(0, "The Pokemon broke free! The Pokemon ran away!", 40)
         } else {
           typeWriter(0, "The Pokemon broke free!", 40)

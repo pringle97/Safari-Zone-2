@@ -9,19 +9,20 @@ const capitalize = (string) => {
 const quoteElem = document.getElementById("quote")
 const setupElem = document.getElementById("setup")
 const jokeElem = document.getElementById("geek-joke")
-const listElem = document.createElement("ul")
 
 // grabbing array from localStorage and setting it to caughtPokemonArr variable. If array does not exist, sets it to empty array. Parse with JSON.parse so a real array is returned, not a string array
 const caughtPokemonArr = JSON.parse(localStorage.getItem("caughtPokemonArr")) || []
 
 // loop for array and rendering onto list
-caughtPokemonArr.forEach((pokemon) => {
+caughtPokemonArr.forEach((pokemon, i) => {
+  const listElem = document.createElement("ul")
   listElem.className = "collection-item waves-effect z-depth-1"
   listElem.innerHTML = `
   <a class="btn-flat"><h6>${pokemon}</h6></a>
-  <a class="btn-flat delete right"><i class="material-icons">cancel</i></a>
+    <a class="btn-flat delete right" data-index="${i}"><i class="material-icons">cancel</i></a></a>
   `
   document.getElementById("pokeList").append(listElem)
+  console.log(pokeList)
 })
 // delete pokemon from pokedex
 // document.getElementById("deleteFromPokedex").addEventListener("click", event => {
