@@ -22,7 +22,6 @@ caughtPokemonArr.forEach((pokemon, i) => {
     <a class="btn-flat delete right" data-index="${i}"><i class="material-icons">cancel</i></a></a>
   `
   document.getElementById("pokeList").append(listElem)
-  console.log(pokeList)
 })
 // delete pokemon from pokedex
 // document.getElementById("deleteFromPokedex").addEventListener("click", event => {
@@ -105,7 +104,7 @@ document.getElementById("random").addEventListener("click", event => {
         setupElem.innerHTML = ""
         jokeElem.innerHTML = ""
         // typewriter function
-        function typeWriter () {
+        function typeWriter() {
           if (i < dadJoke.length) {
             document.getElementById("setup").innerHTML += dadJoke.charAt(i)
             i++
@@ -126,7 +125,7 @@ document.getElementById("random").addEventListener("click", event => {
         setupElem.innerHTML = ""
         jokeElem.innerHTML = ""
         // type writer function
-        function typeWriter () {
+        function typeWriter() {
           if (i < quote.length) {
             document.getElementById("quote").innerHTML += quote.charAt(i)
             i++
@@ -136,7 +135,6 @@ document.getElementById("random").addEventListener("click", event => {
         // intiation for type writer function for random quote
         typeWriter()
       })
-    // .catch(err => console.log(err))
   } else {
     axios.get("https://geek-jokes.sameerkumar.website/api?format=json")
       .then(res => {
@@ -146,7 +144,7 @@ document.getElementById("random").addEventListener("click", event => {
         setupElem.innerHTML = ""
         jokeElem.innerHTML = ""
         // type writer function
-        function typeWriter () {
+        function typeWriter() {
           if (i < joke.length) {
             document.getElementById("geek-joke").innerHTML += joke.charAt(i)
             i++
@@ -156,6 +154,5 @@ document.getElementById("random").addEventListener("click", event => {
         // initiation of type writer function for random joke
         typeWriter()
       })
-      .catch(err => console.log(err))
   }
 })

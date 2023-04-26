@@ -20,7 +20,6 @@ function addDecimal (num) {
 
 function catchPokemon () {
   const roll = Math.floor(Math.random() * 3)
-  console.log(roll)
   return roll === 1
 }
 
