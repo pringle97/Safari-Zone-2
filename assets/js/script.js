@@ -51,6 +51,8 @@ function didPokemonRun () {
 // click event to start random pokemon generator
 document.getElementById("explore-button").addEventListener("click", event => {
   event.preventDefault()
+  document.getElementById("welcome-container").style.display = "none"
+  document.getElementById("card-content").style.display = "block"
   document.getElementById("throwing-buttons").style.display = "block"
   const maxPokemonNumber = 386
   pokemonNum = (Math.floor(Math.random() * maxPokemonNumber) + 1)
@@ -131,7 +133,7 @@ document.getElementById("ball").addEventListener("click", event => {
         <img src="" alt="">
         <h6 style="text-align: center">Press explore to keep playing!<h6>
         `
-          document.getElementById("card-content").innerHTML = ""
+          document.getElementById("card-content").style.display = "none"
           typeWriter(0, "The Pokemon broke free! The Pokemon ran away!", 40)
         } else {
           typeWriter(0, "The Pokemon broke free!", 40)

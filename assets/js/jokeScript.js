@@ -22,17 +22,16 @@ caughtPokemonArr.forEach((pokemon) => {
   <a class="btn-flat delete right"><i class="material-icons">cancel</i></a>
   `
   document.getElementById("pokeList").append(listElem)
-  // delete pokemon from pokedex
-  // document.getElementById("deleteFromPokedex").addEventListener("click", event => {
-  //   function deletePokemon() {
-  //     let existingPokemon = JSON.parse(localStorage.getItem("caughtPokemonArr"))
-  //     existingPokemon.splice(index, 1)
-  //     localStorage.setItem("caughtPokemonArr", JSON.stringify(existingPokemon))
-  //   }
-  //   deletePokemon()
-  // })
 })
-
+// delete pokemon from pokedex
+// document.getElementById("deleteFromPokedex").addEventListener("click", event => {
+//   function deletePokemon() {
+//     let existingPokemon = JSON.parse(localStorage.getItem("caughtPokemonArr"))
+//     existingPokemon.splice(index, 1)
+//     localStorage.setItem("caughtPokemonArr", JSON.stringify(existingPokemon))
+//   }
+//   deletePokemon()
+// })
 // function deletePokemon(pokemon) {
 //   event.preventDefault()
 //   if (pokemon.target.classList.contains("delete")) {
