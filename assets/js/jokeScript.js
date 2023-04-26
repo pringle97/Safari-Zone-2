@@ -104,7 +104,7 @@ document.getElementById("random").addEventListener("click", event => {
         setupElem.innerHTML = ""
         jokeElem.innerHTML = ""
         // typewriter function
-        function typeWriter() {
+        function typeWriter () {
           if (i < dadJoke.length) {
             document.getElementById("setup").innerHTML += dadJoke.charAt(i)
             i++
@@ -125,7 +125,7 @@ document.getElementById("random").addEventListener("click", event => {
         setupElem.innerHTML = ""
         jokeElem.innerHTML = ""
         // type writer function
-        function typeWriter() {
+        function typeWriter () {
           if (i < quote.length) {
             document.getElementById("quote").innerHTML += quote.charAt(i)
             i++
@@ -144,7 +144,7 @@ document.getElementById("random").addEventListener("click", event => {
         setupElem.innerHTML = ""
         jokeElem.innerHTML = ""
         // type writer function
-        function typeWriter() {
+        function typeWriter () {
           if (i < joke.length) {
             document.getElementById("geek-joke").innerHTML += joke.charAt(i)
             i++

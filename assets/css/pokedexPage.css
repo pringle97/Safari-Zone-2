@@ -12,6 +12,11 @@
   padding: 0 2% 2% 2%;
 }
 
+.collection-item {
+  display: flex;
+  width: fit-content;
+}
+
 .button-action {
   background-color: #70c0a0;
 }
