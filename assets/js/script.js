@@ -1,6 +1,8 @@
 /* eslint-disable no-undef */
 // the one mcss function to rule them all (conveniently initializes everything so components work) https://materializecss.com/auto-init.html
 M.AutoInit()
+// local storage for caught pokemon
+const caughtPokemonArr = JSON.parse(localStorage.getItem("caughtPokemonArr")) || []
 
 const capitalize = (string) => {
   return string.charAt(0).toUpperCase() + string.slice(1)
@@ -24,29 +26,9 @@ function catchPokemon () {
 }
 
 function didPokemonRun () {
-  const roll = Math.floor(Math.random() * 2)
+  const roll = Math.floor(Math.random() * 3)
   return roll === 1
 }
-
-// easier to catch but run rate is higher
-// document.getElementById("rock").addEventListener("click", event => {
-//   event.preventDefault()
-//   function throwRock() {
-//     const roll =
-//   }
-//   document.getElementById("card-content").innerHTML = ""
-//   typeWriter(0, "The Pokemon is angry!", 50)
-// })
-
-// less likely to run but harder to catch
-// document.getElementById("berry").addEventListener("click", event => {
-//   event.preventDefault()
-//   function throwBerry() {
-//     const roll =
-//   }
-//   document.getElementById("card-content").innerHTML = ""
-//   typeWriter(0, "The Pokemon is eating!", 50)
-// })
 
 // click event to start random pokemon generator
 document.getElementById("explore-button").addEventListener("click", event => {
@@ -100,6 +82,20 @@ document.getElementById("explore-button").addEventListener("click", event => {
     })
 })
 
+// easier to catch but run rate is higher
+document.getElementById("rock").addEventListener("click", event => {
+  event.preventDefault()
+  document.getElementById("caught-status").innerHTML = ""
+  typeWriter(0, "The Pokemon is angry!", 40)
+})
+
+// throwing a berry makes it harder to catch, less likely to run
+document.getElementById("berry").addEventListener("click", event => {
+  event.preventDefault()
+  document.getElementById("caught-status").innerHTML = ""
+  typeWriter(0, "The Pokemon is eating!", 40)
+})
+
 // throw ball click event
 document.getElementById("ball").addEventListener("click", event => {
   event.preventDefault()
@@ -107,8 +103,6 @@ document.getElementById("ball").addEventListener("click", event => {
     .then(res => {
       const pokemon = res.data
       const pokemonName = pokemon.name
-      // grabbing array from localStorage and setting it to caughtPokemonArr variable. empty array if array doesn't exist. Parse with JSON.parse so a real array is returned, not a string array
-      const caughtPokemonArr = JSON.parse(localStorage.getItem("caughtPokemonArr")) || []
       // random number generator to capture pokemon
       const wasCaught = catchPokemon()
       //  if statement for caught pokemon vs uncaught pokemon
