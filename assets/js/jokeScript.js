@@ -23,23 +23,6 @@ caughtPokemonArr.forEach((pokemon, i) => {
   `
   document.getElementById("pokeList").append(listElem)
 })
-// delete pokemon from pokedex
-// document.getElementById("deleteFromPokedex").addEventListener("click", event => {
-//   function deletePokemon() {
-//     let existingPokemon = JSON.parse(localStorage.getItem("caughtPokemonArr"))
-//     existingPokemon.splice(index, 1)
-//     localStorage.setItem("caughtPokemonArr", JSON.stringify(existingPokemon))
-//   }
-//   deletePokemon()
-// })
-// function deletePokemon(pokemon) {
-//   event.preventDefault()
-//   if (pokemon.target.classList.contains("delete")) {
-//     if (confirm("Are you sure?")) {
-//       let listElem = pokmeon.target.parentNode
-//     }
-//   }
-// }
 
 // generator value from user mouse clicks
 const pokeCollection = document.querySelectorAll(".collection-item")

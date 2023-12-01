@@ -30,6 +30,20 @@ function didPokemonRun () {
   return roll === 1
 }
 
+// easier to catch but run rate is higher
+document.getElementById("rock").addEventListener("click", event => {
+  event.preventDefault()
+  document.getElementById("caught-status").innerHTML = ""
+  typeWriter(0, "The Pokemon is angry!", 40)
+})
+
+// throwing a berry makes it harder to catch, less likely to run
+document.getElementById("berry").addEventListener("click", event => {
+  event.preventDefault()
+  document.getElementById("caught-status").innerHTML = ""
+  typeWriter(0, "The Pokemon is eating!", 40)
+})
+
 // click event to start random pokemon generator
 document.getElementById("explore-button").addEventListener("click", event => {
   event.preventDefault()
@@ -82,20 +96,6 @@ document.getElementById("explore-button").addEventListener("click", event => {
     })
 })
 
-// easier to catch but run rate is higher
-document.getElementById("rock").addEventListener("click", event => {
-  event.preventDefault()
-  document.getElementById("caught-status").innerHTML = ""
-  typeWriter(0, "The Pokemon is angry!", 40)
-})
-
-// throwing a berry makes it harder to catch, less likely to run
-document.getElementById("berry").addEventListener("click", event => {
-  event.preventDefault()
-  document.getElementById("caught-status").innerHTML = ""
-  typeWriter(0, "The Pokemon is eating!", 40)
-})
-
 // throw ball click event
 document.getElementById("ball").addEventListener("click", event => {
   event.preventDefault()
@@ -136,3 +136,6 @@ document.getElementById("ball").addEventListener("click", event => {
       }
     })
 })
+
+// delete from local storage
+// caughtPokemonArr.deletePokemonFromStorage()
