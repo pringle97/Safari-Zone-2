@@ -136,6 +136,3 @@ document.getElementById("ball").addEventListener("click", event => {
       }
     })
 })
-
-// delete from local storage
-// caughtPokemonArr.deletePokemonFromStorage()

@@ -24,12 +24,14 @@ caughtPokemonArr.forEach((pokemon, i) => {
   document.getElementById("pokeList").append(listElem)
 })
 
+// delete from local storage
+// caughtPokemonArr.deletePokemonFromStorage()
+
 // generator value from user mouse clicks
 const pokeCollection = document.querySelectorAll(".collection-item")
 pokeCollection.forEach(item => {
   item.addEventListener("click", event => {
     const valueCheck = event.target.firstChild.textContent
-    // const buttonElem = event.target.id
     event.preventDefault()
     // using generated value from mouse clicks to grab Pokemon information from Pokemon API
     axios.get(`https://pokeapi.co/api/v2/pokemon/${valueCheck}`)
@@ -77,7 +79,6 @@ document.getElementById("random").addEventListener("click", event => {
   const speed = 10
 
   if (randomNumber === 0) {
-    // eslint-disable-next-line no-undef
     axios.get("https://icanhazdadjoke.com/", {
       headers: { Accept: "application/json" }
     })
@@ -99,7 +100,6 @@ document.getElementById("random").addEventListener("click", event => {
       })
   } else if (randomNumber === 0) {
     // axios get for other joke
-    // eslint-disable-next-line no-undef
     axios.get("https://api.quotable.io/random")
       .then(res => {
         // Grabbing info from API and setting into strings
